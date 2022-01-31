@@ -1,4 +1,4 @@
-import NavBar from "../components/NevBar";
+import NavBar from "../components/NavBar";
 
 export default () => {
   return (

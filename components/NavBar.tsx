@@ -34,9 +34,9 @@ export default function NavBar() {
                 </Disclosure.Button>
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex-shrink-0 flex items-center">
+                <div className="flex-shrink-0 flex text-center">
                   <Link href="/">
-                    <h1 className="text-white cursor-pointer text-2xl font-serif font-bold">
+                    <h1 className="text-white cursor-pointer text-2xl  font-serif font-bold">
                       Resume Builder
                     </h1>
                   </Link>
@@ -61,7 +61,7 @@ export default function NavBar() {
                   </div>
                 </div>
               </div>
-              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <div className=" inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button
                   type="button"
                   className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
@@ -79,8 +79,7 @@ export default function NavBar() {
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map((item) => (
                 <Link href={item.href} key={item.name}>
-                  <Disclosure.Button
-                    as="a"
+                  <a
                     className={classNames(
                       item.current
                         ? "bg-gray-900 text-white"
@@ -90,7 +89,7 @@ export default function NavBar() {
                     aria-current={item.current ? "page" : undefined}
                   >
                     {item.name}
-                  </Disclosure.Button>
+                  </a>
                 </Link>
               ))}
             </div>
@@ -123,7 +122,7 @@ export const ProfileManu = () => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-gray-800 text-white ring-1 ring-black ring-opacity-5 focus:outline-none">
           <Menu.Item>
             {({ active }) => (
               <a
@@ -132,8 +131,8 @@ export const ProfileManu = () => {
                   signOut();
                 }}
                 className={classNames(
-                  active ? "bg-gray-100" : "",
-                  "block px-4 py-2 text-sm text-gray-700 cursor-pointer"
+                  active ? "text-white" : "",
+                  "block px-4 py-2 text-sm text-gray-400 cursor-pointer"
                 )}
               >
                 Sign out
