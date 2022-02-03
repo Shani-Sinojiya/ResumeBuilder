@@ -1,12 +1,14 @@
 import Link from "next/link";
-import { Fragment } from "react";
 import { useRouter } from "next/router";
-import { signOut } from "next-auth/react";
+import ProfileManu from "./ProfileManu";
 import classNames from "../lib/className";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
+import { Disclosure } from "@headlessui/react";
+import LoginIconForNav from "./LoginIconForNav";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { useSession } from "next-auth/react";
 
 export default function NavBar() {
+  const { data: session, status } = useSession();
   const router = useRouter();
   const navigation = [
     { name: "Home", href: "/", current: router.asPath == "/" ? true : false },
@@ -35,9 +37,9 @@ export default function NavBar() {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex text-center">
-                  <Link href="/">
-                    <h1 className="text-white cursor-pointer text-2xl  font-serif font-bold">
-                      Resume Builder
+                  <Link href="/" passHref>
+                    <h1 className="text-white cursor-pointer text-2xl font-serif font-bold">
+                      Me<span className="text-gray-300">Re</span>Sume
                     </h1>
                   </Link>
                 </div>
@@ -61,16 +63,12 @@ export default function NavBar() {
                   </div>
                 </div>
               </div>
-              <div className=" inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button
-                  type="button"
-                  className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-                >
-                  <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
-
-                <ProfileManu />
+              <div className="inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                {status == "loading" || session == undefined || session == null ? (
+                  <LoginIconForNav />
+                ) : (
+                  <ProfileManu />
+                )}
               </div>
             </div>
           </div>
@@ -99,48 +97,3 @@ export default function NavBar() {
     </Disclosure>
   );
 }
-
-export const ProfileManu = () => {
-  return (
-    <Menu as="div" className="ml-3 relative">
-      <div>
-        <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-          <span className="sr-only">Open user menu</span>
-          <img
-            className="h-8 w-8 rounded-full"
-            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-            alt="user image"
-          />
-        </Menu.Button>
-      </div>
-      <Transition
-        as={Fragment}
-        enter="transition ease-out duration-100"
-        enterFrom="transform opacity-0 scale-95"
-        enterTo="transform opacity-100 scale-100"
-        leave="transition ease-in duration-75"
-        leaveFrom="transform opacity-100 scale-100"
-        leaveTo="transform opacity-0 scale-95"
-      >
-        <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-gray-800 text-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-          <Menu.Item>
-            {({ active }) => (
-              <a
-                onClick={(e) => {
-                  e.preventDefault();
-                  signOut();
-                }}
-                className={classNames(
-                  active ? "text-white" : "",
-                  "block px-4 py-2 text-sm text-gray-400 cursor-pointer"
-                )}
-              >
-                Sign out
-              </a>
-            )}
-          </Menu.Item>
-        </Menu.Items>
-      </Transition>
-    </Menu>
-  );
-};

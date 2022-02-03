@@ -1,4 +1,5 @@
 import { signIn } from "next-auth/react";
+
 const Login = () => {
   return (
     <div className="h-screen bg-gradient-to-tl from-green-400 to-indigo-900 w-full py-16 px-4">
@@ -44,7 +45,7 @@ export const GoogleButton = () => (
     role="button"
     onClick={(e) => {
       e.preventDefault();
-      signIn();
+      signIn("google");
     }}
     className="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-10"
   >

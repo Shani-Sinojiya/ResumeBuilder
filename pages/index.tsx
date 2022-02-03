@@ -1,9 +1,7 @@
 import NavBar from "../components/NavBar";
 
-export default () => {
-  return (
-    <>
-      <NavBar />
-    </>
-  );
+const Index = () => {
+  return <NavBar />;
 };
+
+export default Index;
