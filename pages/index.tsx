@@ -13,7 +13,7 @@ const Index = () => {
         />
       </Head>
       <NavBar />
-      <Alert alertNumer={1} />
+      <Alert alertNumer={2} />
     </>
   );
 };
