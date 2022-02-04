@@ -5,7 +5,7 @@ const LoginIconForNav = () => {
   return (
     <button
       type="button"
-      className="bg-gray-800 p-1 rounded-xl text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+      className="bg-gray-800 p-1 rounded-xl text-cyan-400 hover:text-cyan-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-cyan-800 focus:ring-white"
       title="Login Now"
       onClick={(e) => {
         e.preventDefault();

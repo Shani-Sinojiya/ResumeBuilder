@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Alert from "../components/Alert";
 import NavBar from "../components/NavBar";
+import CTASection from "../components/CTASection";
 
 const Index = () => {
   return (
@@ -13,7 +13,7 @@ const Index = () => {
         />
       </Head>
       <NavBar />
-      <Alert alertNumer={2} />
+      <CTASection />
     </>
   );
 };

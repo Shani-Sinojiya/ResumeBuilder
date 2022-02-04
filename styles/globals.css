@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base {
+  *::selection {
+    @apply bg-cyan-500  text-gray-800;
+  }
+  html::-webkit-scrollbar {
+    @apply w-2;
+  }
+  html::-webkit-scrollbar-track {
+    @apply bg-gray-800;
+  }
+  html::-webkit-scrollbar-thumb {
+    @apply bg-gradient-to-b from-cyan-400 to-cyan-600 border border-none rounded-lg;
+  }
+}

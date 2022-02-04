@@ -34,10 +34,10 @@ const ProfileManu = () => {
       >
         <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-gray-800 text-white ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-3 px-4">
-            <span className="block text-sm text-gray-900 dark:text-white">
+            <span className="block text-sm text-cyan-400 hover:text-cyan-500 dark:text-cyan-400">
               {session?.user?.name}
             </span>
-            <span className="block text-sm font-medium text-gray-500 truncate dark:text-gray-400">
+            <span className="block text-sm font-medium text-cyan-300 truncate dark:text-cyan-400">
               {session?.user?.email}
             </span>
           </div>
@@ -49,8 +49,8 @@ const ProfileManu = () => {
                   signOut();
                 }}
                 className={classNames(
-                  active ? "text-white" : "",
-                  "block px-4 py-2 text-sm text-gray-400 cursor-pointer"
+                  active ? "text-cyan-500" : "",
+                  "block px-4 py-2 text-sm text-cyan-400 cursor-pointer"
                 )}
               >
                 Sign out
