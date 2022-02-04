@@ -4,7 +4,7 @@ import ProfileManu from "./ProfileManu";
 import classNames from "../lib/className";
 import { Disclosure } from "@headlessui/react";
 import LoginIconForNav from "./LoginIconForNav";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { MenuAlt1Icon, XIcon } from "@heroicons/react/outline";
 import { useSession } from "next-auth/react";
 
 export default function NavBar() {
@@ -31,7 +31,7 @@ export default function NavBar() {
                   {open ? (
                     <XIcon className="block h-6 w-6" aria-hidden="true" />
                   ) : (
-                    <MenuIcon className="block h-6 w-6" aria-hidden="true" />
+                    <MenuAlt1Icon className="block h-6 w-6" aria-hidden="true" />
                   )}
                 </Disclosure.Button>
               </div>
