@@ -33,6 +33,14 @@ const ProfileManu = () => {
         leaveTo="transform opacity-0 scale-95"
       >
         <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-gray-800 text-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <div className="py-3 px-4">
+            <span className="block text-sm text-gray-900 dark:text-white">
+              {session?.user?.name}
+            </span>
+            <span className="block text-sm font-medium text-gray-500 truncate dark:text-gray-400">
+              {session?.user?.email}
+            </span>
+          </div>
           <Menu.Item>
             {({ active }) => (
               <a

@@ -1,9 +1,21 @@
+import Head from "next/head";
+import Login from "../components/Login";
 import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/react";
-import Login from "../components/Login";
 
 function loginMain() {
-  return <Login />;
+  return (
+    <>
+      <Head>
+        <title>Login | MeSeme - Awosome Resume Builder</title>
+        <meta
+          name="description"
+          content="Login page for MeSume. MeSume is Awosome Resume Builder Web"
+        />
+      </Head>
+      <Login />
+    </>
+  );
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
