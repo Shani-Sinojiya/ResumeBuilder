@@ -1,8 +1,8 @@
 import Head from "next/head";
-import NavBar from "../components/NavBar";
 import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/react";
-import ResumeItom from "../components/ResumeItom";
+import NavBar from "../../components/NavBar";
+import ResumeItom from "../../components/ResumeItom";
 
 export default function Resumes(props: { data: any }) {
   return (
