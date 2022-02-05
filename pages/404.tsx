@@ -1,6 +1,7 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import style from "../styles/404.module.css";
-import Head from "next/head";
+
 const error404 = () => {
   const router = useRouter();
   return (
