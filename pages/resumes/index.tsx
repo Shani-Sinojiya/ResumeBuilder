@@ -3,6 +3,7 @@ import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/react";
 import NavBar from "../../components/NavBar";
 import ResumeItom from "../../components/ResumeItom";
+import Footer from "../../components/Footer";
 
 export default function Resumes(props: { data: any }) {
   return (
@@ -16,6 +17,7 @@ export default function Resumes(props: { data: any }) {
       </Head>
       <NavBar />
       <ResumeItom />
+      <Footer />
     </>
   );
 }

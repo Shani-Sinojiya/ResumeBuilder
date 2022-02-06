@@ -12,7 +12,7 @@ const ProfileManu = () => {
         {status == "loading" ? (
           <LoginIconForNav />
         ) : (
-          <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+          <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-cyan-400">
             <span className="sr-only">Open user menu</span>
             {/* eslint-disable-next-line */}
             <img
@@ -33,7 +33,7 @@ const ProfileManu = () => {
         leaveTo="transform opacity-0 scale-95"
       >
         <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-gray-800 text-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-          <div className="py-3 px-4">
+          <div className="py-3 px-4 border-b border-cyan-300">
             <span className="block text-sm text-cyan-400 hover:text-cyan-500 dark:text-cyan-400">
               {session?.user?.name}
             </span>

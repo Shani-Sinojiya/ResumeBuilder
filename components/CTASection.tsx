@@ -1,6 +1,7 @@
-import Link from "next/link";
+import { useRouter } from "next/router";
 
 function CTASection() {
+  const router = useRouter();
   return (
     <div className="bg-gray-800">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
@@ -12,11 +13,15 @@ function CTASection() {
         </h2>
         <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
           <div className="inline-flex rounded-md shadow">
-            <Link href="/resumes">
-              <a className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:ring-cyan-300 dark:focus:ring-cyan-800 text-base font-medium rounded-md px-5 py-3 text-center mr-2 mb-2">
-                Get started
-              </a>
-            </Link>
+            <button
+              className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl text-base font-medium rounded-md px-5 py-3 text-center mr-2 mb-2"
+              onClick={(e) => {
+                e.preventDefault();
+                router.push("/resumes");
+              }}
+            >
+              Get started
+            </button>
           </div>
         </div>
       </div>

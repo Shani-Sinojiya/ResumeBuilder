@@ -1,21 +1,24 @@
 import Head from "next/head";
 import NavBar from "../components/NavBar";
+import Feature from "../components/Feature";
 import CTASection from "../components/CTASection";
+import Footer from "../components/Footer";
 
-const Index = () => {
+function Home() {
   return (
     <>
       <Head>
         <title>MeSume - Awosome Resume Builder</title>
         <meta
           name="description"
-          content="MeSume is Awosome Resume Builder Web"
-        />
+          content="MeSume is Awosome Resume Builder Web" />
       </Head>
       <NavBar />
       <CTASection />
+      <Feature />
+      <Footer />
     </>
   );
-};
+}
 
-export default Index;
+export default Home;
