@@ -8,7 +8,7 @@ const Feature = () => {
         <div className="flex flex-wrap -m-4">
           <div className="p-4 lg:w-1/2 md:w-full">
             <div className="flex border-none rounded-lg p-8 sm:flex-row flex-col">
-              <div className="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-gray-700 text-cyan-400 flex-shrink-0">
+              <div className="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-gray-700 text-cyan-400 flex-shrink-0 cursor-pointer hover:bg-cyan-400 hover:text-gray-700">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   enableBackground="new 0 0 24 24"
@@ -16,7 +16,7 @@ const Feature = () => {
                   viewBox="0 0 24 24"
                   className="w-10 h-10"
                   width="24px"
-                  fill="#22D3EE"
+                  fill="currentColor"
                 >
                   <g>
                     <rect fill="none" height="24" width="24" />
@@ -44,7 +44,7 @@ const Feature = () => {
           </div>
           <div className="p-4 lg:w-1/2 md:w-full">
             <div className="flex rounded-lg p-8 sm:flex-row flex-col">
-              <div className="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-gray-700 text-cyan-400 flex-shrink-0">
+              <div className="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-gray-700 text-cyan-400 flex-shrink-0 cursor-pointer hover:bg-cyan-400 hover:text-gray-700">
                 <RefreshIcon className="w-10 h-10" aria-hidden="true" />
               </div>
               <div className="flex-grow">
@@ -63,11 +63,11 @@ const Feature = () => {
           </div>
           <div className="p-4 lg:w-1/2 md:w-full">
             <div className="flex border-none rounded-lg p-8 sm:flex-row flex-col">
-              <div className="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-gray-700 text-cyan-400 flex-shrink-0">
+              <div className="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-gray-700 text-cyan-400 flex-shrink-0 cursor-pointer hover:bg-cyan-400 hover:text-gray-700">
                 <svg
                   stroke="currentColor"
                   fill="currentColor"
-                  stroke-width="0"
+                  strokeWidth="0"
                   viewBox="0 0 512 512"
                   className="w-10 h-10"
                   height="18px"
@@ -94,11 +94,11 @@ const Feature = () => {
           </div>
           <div className="p-4 lg:w-1/2 md:w-full">
             <div className="flex rounded-lg p-8 sm:flex-row flex-col">
-              <div className="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-gray-700 text-cyan-400 flex-shrink-0">
+              <div className="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-gray-700 text-cyan-400 flex-shrink-0 cursor-pointer hover:bg-cyan-400 hover:text-gray-700">
                 <svg
                   stroke="currentColor"
                   fill="currentColor"
-                  stroke-width="0"
+                  strokeWidth="0"
                   viewBox="0 0 448 512"
                   className="w-9 h-9"
                   height="18px"

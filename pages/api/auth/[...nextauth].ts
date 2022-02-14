@@ -20,9 +20,15 @@ export default NextAuth({
   },
   secret: "test",
   adapter: MongoDBAdapter(clientPromise),
-  session: {
-    strategy: "database",
-    maxAge: 15 * 24 * 60 * 60,
-    updateAge: 24 * 60 * 60,
+  callbacks: {
+    redirect({ url, baseUrl }) {
+      if (url.startsWith(baseUrl)) return url;
+      else if (url.startsWith("/")) return new URL(url, baseUrl).toString();
+      return baseUrl;
+    },
+    async session({ session, user }) {
+      session.userID = user.id;
+      return session;
+    },
   },
 });
