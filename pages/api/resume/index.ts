@@ -49,29 +49,34 @@ DBConn();
 
 const hendler = async (req: NextApiRequest, res: NextApiResponse) => {
   const { method } = req;
-  const { data: session } = useSession();
+
   switch (method) {
     case "GET":
       res.status(200).json(products);
       break;
     case "POST":
-      if (session) {
-        try {
-          const Resume = new Resumes({
-            title: req.body.title,
-            user: session.userID,
-          });
-          await Resume.save();
-          return res.status(201).json({ seccse: true, d: Resume });
-        } catch (error: any) {
-          return res.status(400).json({ seccse: false, error: error.msg });
-        }
-      }
+      await PostReqForResum(req, res);
       break;
     default:
-      res.json({ msg: "hello" });
+      res.status(500).json({ msg: "invalid authantication" });
       break;
   }
 };
 
 export default hendler;
+
+async function PostReqForResum(req: NextApiRequest, res: NextApiResponse<any>) {
+  const { data: session } = useSession();
+  if (session) {
+    try {
+      const Resume = new Resumes({
+        title: req.body.title,
+        user: session.userID,
+      });
+      await Resume.save();
+      res.status(201).json({ seccse: true, d: Resume });
+    } catch (error: any) {
+      res.status(400).json({ seccse: false, error: error.msg });
+    }
+  }
+}
