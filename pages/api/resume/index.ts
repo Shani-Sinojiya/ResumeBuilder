@@ -21,7 +21,7 @@ const hendler = (req: NextApiRequest, res: NextApiResponse) => {
 };
 export default hendler;
 
-async function PostReqForResum(req: NextApiRequest, res: NextApiResponse<any>) {
+async function PostReqForResum(req: NextApiRequest, res: NextApiResponse) {
   const { data: session } = useSession();
   if (session) {
     try {
@@ -39,12 +39,16 @@ async function PostReqForResum(req: NextApiRequest, res: NextApiResponse<any>) {
   }
 }
 
-const GetDataAll = async (res: NextApiResponse<any>) => {
+const GetDataAll = async (res: NextApiResponse) => {
   const { data: session } = useSession();
   if (session) {
     try {
       const data = await Resumes.find({ user: session.userID });
-      res.status(200).json({ seccse: true, data });
+      if (data == []) {
+        res.status(200).json({ seccse: true, info: "please create a resume" });
+      } else {
+        res.status(200).json({ seccse: true, data });
+      }
     } catch (error: any) {
       res.status(400).json({ seccse: false, error: error.msg });
     }
