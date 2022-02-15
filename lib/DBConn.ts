@@ -5,7 +5,6 @@ const DBConn = () => {
     console.log("Already Connected");
     return;
   }
-
   mongoose.connect(`${process.env.MONGODB_URI}`, {}, (err: any) => {
     if (err) throw err;
     console.log("Connection Sucssesfu");
