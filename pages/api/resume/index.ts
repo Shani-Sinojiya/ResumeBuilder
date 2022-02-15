@@ -78,5 +78,7 @@ async function PostReqForResum(req: NextApiRequest, res: NextApiResponse<any>) {
     } catch (error: any) {
       res.status(400).json({ seccse: false, error: error.msg });
     }
+  } else{
+    res.status(400).json({ seccse: false, error: "plaese login now" });
   }
 }
