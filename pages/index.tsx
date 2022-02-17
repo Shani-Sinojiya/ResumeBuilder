@@ -1,8 +1,8 @@
 import Head from "next/head";
+import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import Feature from "../components/Feature";
 import CTASection from "../components/CTASection";
-import Footer from "../components/Footer";
 
 function Home() {
   return (
