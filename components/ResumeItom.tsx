@@ -1,15 +1,23 @@
 import axios from "axios";
+import { useSession } from "next-auth/react";
 import { Key, useEffect, useState } from "react";
 
-const ResumeItom = () => {
+const ResumeItom = (props: { userID: any }) => {
   const [products, setProducts] = useState([]);
-
-  const dataFetch = async () => {
-    const res = await axios.get("/api/resume");
+  async function dataFetch() {
+    const res = await axios.get("/api/resume", {
+      headers: {
+        accept: `${props.userID}`,
+      },
+    });
     if (res.status === 200) {
-      setProducts(res.data);
+      if (res.data.data === undefined) {
+        setProducts([]);
+      }
+      setProducts(res.data.data);
+      console.log(res);
     }
-  };
+  }
   useEffect(() => {
     dataFetch();
   }, []);

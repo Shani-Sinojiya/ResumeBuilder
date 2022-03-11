@@ -7,7 +7,7 @@ const DBConn = () => {
   }
   mongoose.connect(`${process.env.MONGODB_URI}`, {}, (err: any) => {
     if (err) throw err;
-    console.log("Connection Sucssesfu");
+    console.log("Connection Sucssesful");
   });
 };
 

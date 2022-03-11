@@ -2,10 +2,10 @@ import Head from "next/head";
 import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/react";
 import NavBar from "../../components/NavBar";
-import ResumeItom from "../../components/ResumeItom";
 import Footer from "../../components/Footer";
+import ResumeItom from "../../components/ResumeItom";
 
-export default function Resumes(props: { data: any }) {
+export default function Resumes(props: { user: any }) {
   return (
     <>
       <Head>
@@ -16,7 +16,7 @@ export default function Resumes(props: { data: any }) {
         />
       </Head>
       <NavBar />
-      <ResumeItom />
+      <ResumeItom userID={props.user} />
       <Footer />
     </>
   );
@@ -24,7 +24,6 @@ export default function Resumes(props: { data: any }) {
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const session = await getSession(ctx);
-
   if (!session) {
     return {
       redirect: {
@@ -33,10 +32,9 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
       },
     };
   }
-
   return {
     props: {
-      data: "hello",
+      user: session.userID,
     },
   };
 };
