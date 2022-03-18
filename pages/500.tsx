@@ -1,5 +1,5 @@
-import style from "../styles/500.module.css";
 import Head from "next/head";
+import style from "../styles/500.module.css";
 
 const error500 = () => {
   return (

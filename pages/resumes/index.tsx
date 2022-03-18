@@ -3,7 +3,7 @@ import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/react";
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
-import ResumeItom from "../../components/ResumeItom";
+import ResumeItom from "../../components/ResumeItem";
 
 export default function Resumes(props: { user: any }) {
   return (
