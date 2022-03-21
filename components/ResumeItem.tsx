@@ -7,6 +7,8 @@ import { FolderAddIcon } from "@heroicons/react/outline";
 const ResumeItom = (props: { userID: any }) => {
   const [ResumeEmpty, setResumeEmpty] = useState(true);
   const [products, setProducts] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+  
   async function dataFetch() {
     const res = await axios.get("/api/resume", {
       headers: {
@@ -15,15 +17,18 @@ const ResumeItom = (props: { userID: any }) => {
     });
     if (res.status === 200) {
       setProducts(res.data.data);
-      setResumeEmpty(res.data.data == [] ? true : false);
-      console.log(res);
+      if(res.data.data = []){
+        setResumeEmpty(true);
+      } else{
+        setResumeEmpty(false)
+      }
+      // console.log(res);
     }
   }
   useEffect(() => {
     dataFetch();
   }, []);
 
-  let [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
     setIsOpen(false);
