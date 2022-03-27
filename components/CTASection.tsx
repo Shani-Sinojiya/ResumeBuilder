@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
+import { signIn } from "next-auth/react";
 
-function CTASection() {
+function CTASection(props: { login: boolean }) {
   const router = useRouter();
   return (
     <div className="bg-gray-800">
@@ -13,19 +14,32 @@ function CTASection() {
         </h2>
         <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
           <div className="inline-flex rounded-md shadow">
-            <button
-              className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl text-base font-medium rounded-md px-5 py-3 text-center mr-2 mb-2"
-              onClick={(e) => {
-                e.preventDefault();
-                router.push("/resumes");
-              }}
-            >
-              Get started
-            </button>
+            {props.login ? (
+              <button
+                className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl text-base font-medium rounded-md px-5 py-3 text-center mr-2 mb-2"
+                onClick={(e) => {
+                  e.preventDefault();
+                  router.push("/resumes");
+                }}
+              >
+                Get started
+              </button>
+            ) : (
+              <button
+                className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl text-base font-medium rounded-md px-5 py-3 text-center mr-2 mb-2"
+                onClick={(e) => {
+                  e.preventDefault();
+                  signIn();
+                }}
+              >
+                Get Login
+              </button>
+            )}
           </div>
         </div>
       </div>
     </div>
   );
 }
+
 export default CTASection;

@@ -1,20 +1,23 @@
 import Head from "next/head";
+import { GetServerSideProps } from "next";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import Feature from "../components/Feature";
+import { getSession } from "next-auth/react";
 import CTASection from "../components/CTASection";
 
-function Home() {
+function Home(props: { login: boolean }) {
   return (
     <>
       <Head>
         <title>MeSume - Awosome Resume Builder</title>
         <meta
           name="description"
-          content="MeSume is Awosome Resume Builder Web" />
+          content="MeSume is Awosome Resume Builder Web"
+        />
       </Head>
       <NavBar />
-      <CTASection />
+      <CTASection login={props.login} />
       <Feature />
       <Footer />
     </>
@@ -22,3 +25,19 @@ function Home() {
 }
 
 export default Home;
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const session = await getSession(ctx);
+  if (!session) {
+    return {
+      props: {
+        login: false,
+      },
+    };
+  }
+  return {
+    props: {
+      login: true,
+    },
+  };
+};
