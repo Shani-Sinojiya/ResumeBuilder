@@ -1,20 +1,9 @@
 import { useState } from "react";
 
-export default function Modal() {
-  const [showModal, setShowModal] = useState(false);
+export default function Modal(props: { smodale: boolean }) {
+  const [showModal, setShowModal] = useState(props.smodale);
   return (
     <>
-      <div className="h-full w-full flex items-center justify-center">
-        <button
-          className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          type="button"
-          data-modal-toggle="authentication-modal"
-          onClick={() => setShowModal(true)}
-        >
-          Toggle modal
-        </button>
-      </div>
-
       <div
         id="authentication-modal"
         tabIndex={showModal ? 1 : -1}
