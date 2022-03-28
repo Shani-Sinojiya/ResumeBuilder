@@ -1,28 +1,67 @@
 import axios from "axios";
-import { Key, useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import { FolderAddIcon } from "@heroicons/react/outline";
-import Modal from "./Modal";
+import { FormEvent, Key, useEffect, useState } from "react";
 
 const ResumeItom = (props: { userID: any }) => {
   const [ResumeEmpty, setResumeEmpty] = useState(true);
   const [products, setProducts] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [NewTitle, setNewTitle] = useState("");
 
   async function dataFetch() {
+    // const id = toast.loading("Please wait...");
     const res = await axios.get("/api/resume", {
       headers: {
         accept: `${props.userID}`,
       },
     });
     if (res.status === 200) {
+      const { data } = res.data;
       setProducts(res.data.data);
-      if ((res.data.data = [])) {
+      if (data.length == 0) {
         setResumeEmpty(true);
       } else {
         setResumeEmpty(false);
       }
     }
   }
+  const HendleNewResume = async (e: FormEvent) => {
+    e.preventDefault();
+    const id = toast.loading("Creating resume ...");
+    try {
+      const res = await axios.post(
+        "/api/resume",
+        { title: NewTitle },
+        {
+          headers: {
+            accept: `${props.userID}`,
+          },
+        }
+      );
+      if (res.status === 201) {
+        toast.update(id, {
+          render: "Creating successful :)",
+          type: "success",
+          isLoading: false,
+          autoClose: 2500,
+        });
+      } else {
+        throw Error;
+      }
+    } catch (error: any) {
+      console.log(error.msg);
+      toast.update(id, {
+        render: "Failed Creating",
+        type: "error",
+        isLoading: false,
+        autoClose: 2500,
+      });
+    }
+    setShowModal(false);
+    setNewTitle("");
+    dataFetch();
+  };
   useEffect(() => {
     dataFetch();
   }, []);
@@ -47,6 +86,7 @@ const ResumeItom = (props: { userID: any }) => {
                 type="button"
                 onClick={() => {
                   setShowModal(true);
+                  setNewTitle("");
                 }}
                 className="rounded-lg text-white bg-cyan-600 place-items-center justify-center font-medium p-3 mt-5 flex hover:text-black hover:bg-cyan-500"
               >
@@ -69,9 +109,7 @@ const ResumeItom = (props: { userID: any }) => {
             tabIndex={1}
             aria-hidden={!showModal}
             aria-modal={showModal}
-            className={`${
-              showModal ? "flex" : "hidden"
-            } overflow-y-auto shadow-md shadow-slate-900/50 overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center bg-slate-800 bg-opacity-50`}
+            className={`flex overflow-y-auto shadow-md shadow-slate-900/50 overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center bg-slate-800 bg-opacity-50`}
           >
             <div className="relative p-4 w-full max-w-md h-full md:h-auto">
               <div className="relative bg-slate-800 rounded-lg shadow dark:bg-slate-700">
@@ -96,7 +134,10 @@ const ResumeItom = (props: { userID: any }) => {
                     </svg>
                   </button>
                 </div>
-                <form className="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8">
+                <form
+                  className="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8"
+                  onSubmit={HendleNewResume}
+                >
                   <h3 className="text-xl font-medium text-cyan-400 dark:text-white">
                     Create Resume
                   </h3>
@@ -115,6 +156,9 @@ const ResumeItom = (props: { userID: any }) => {
                       className="border text-sm rounded-lg block w-full p-2.5 bg-slate-600 border-slate-500 outline-none placeholder-slate-400 text-cyan-200"
                       placeholder="Full stack web developer"
                       required
+                      onChange={(e) => {
+                        setNewTitle(e.target.value);
+                      }}
                     />
                   </div>
                   <div>
@@ -148,16 +192,16 @@ const ResumeItom = (props: { userID: any }) => {
               {/* eslint-disable-next-line */}
               {products.map(
                 (product: {
-                  id: Key | null | undefined;
+                  _id: Key | null | undefined;
                   imageSrc: string | undefined;
                   imageAlt: string | undefined;
                   href: string | undefined;
                   name: string | undefined;
                 }) => (
-                  <div key={product?.id} className="group relative">
+                  <div key={product?._id} className="group relative">
                     <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
                       <img
-                        src={product?.imageSrc}
+                        src="https://source.unsplash.com/random/800x700/"
                         alt={product?.imageAlt}
                         className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                       />
@@ -187,9 +231,7 @@ const ResumeItom = (props: { userID: any }) => {
             tabIndex={1}
             aria-hidden={!showModal}
             aria-modal={showModal}
-            className={`${
-              showModal ? "flex" : "hidden"
-            } overflow-y-auto shadow-md shadow-slate-900/50 overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center bg-slate-800 bg-opacity-50`}
+            className={`flex overflow-y-auto shadow-md shadow-slate-900/50 overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center bg-slate-800 bg-opacity-50`}
           >
             <div className="relative p-4 w-full max-w-md h-full md:h-auto">
               <div className="relative bg-slate-800 rounded-lg shadow dark:bg-slate-700">
@@ -198,7 +240,10 @@ const ResumeItom = (props: { userID: any }) => {
                     type="button"
                     className="bg-transparent absolute top-4 right-4 rounded-lg text-sm p-1.5 font-extrabold ml-auto inline-flex text-cyan-500 items-center hover:bg-cyan-800 hover:text-cyan-400"
                     data-modal-toggle="authentication-modal"
-                    onClick={() => setShowModal(false)}
+                    onClick={() => {
+                      setShowModal(false);
+                      setNewTitle("");
+                    }}
                   >
                     <svg
                       className="w-5 h-5"
@@ -214,7 +259,10 @@ const ResumeItom = (props: { userID: any }) => {
                     </svg>
                   </button>
                 </div>
-                <form className="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8">
+                <form
+                  className="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8"
+                  onSubmit={HendleNewResume}
+                >
                   <h3 className="text-xl font-medium text-cyan-400 dark:text-white">
                     Create Resume
                   </h3>
@@ -233,6 +281,9 @@ const ResumeItom = (props: { userID: any }) => {
                       className="border text-sm rounded-lg block w-full p-2.5 bg-slate-600 border-slate-500 outline-none placeholder-slate-400 text-cyan-200"
                       placeholder="Full stack web developer"
                       required
+                      onChange={(e) => {
+                        setNewTitle(e.target.value);
+                      }}
                     />
                   </div>
                   <div>

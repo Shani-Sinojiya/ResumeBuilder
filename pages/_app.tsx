@@ -1,4 +1,3 @@
-// import "flowbite";
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import "react-toastify/dist/ReactToastify.css";
@@ -9,7 +8,12 @@ function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
     <SessionProvider session={session}>
       <Component {...pageProps} />
-      <ToastContainer newestOnTop role="alert" />
+      <ToastContainer
+        position="bottom-right"
+        newestOnTop
+        role="alert"
+        theme="colored"
+      />
     </SessionProvider>
   );
 }
