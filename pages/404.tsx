@@ -36,4 +36,5 @@ const error404 = () => {
     </section>
   );
 };
+
 export default error404;
