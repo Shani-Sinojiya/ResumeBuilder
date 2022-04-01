@@ -1,6 +1,7 @@
 import DBConn from "../../../middlewares/DBConn";
 import Resumes from "../../../models/ResumeModel";
 import type { NextApiRequest, NextApiResponse } from "next";
+import axios from "axios";
 
 DBConn();
 
@@ -21,11 +22,15 @@ const hendler = async (req: NextApiRequest, res: NextApiResponse) => {
 
 async function PostReqForResum(req: NextApiRequest, res: NextApiResponse) {
   const { headers } = req;
+  const imageNumber = Math.floor(Math.random() * 13);
+  const imageUrl = "/img/" + imageNumber + "_resume_image.jpg";
+
   if (headers.accept != null) {
     try {
       const NewResume = new Resumes({
         title: req.body.title,
         user: headers.accept,
+        image: `${imageUrl}`,
       });
       await NewResume.save();
       res.status(201).json({ seccse: true, data: NewResume });

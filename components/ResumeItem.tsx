@@ -1,6 +1,7 @@
 import axios from "axios";
+import Link from "next/link";
 import { toast } from "react-toastify";
-import { FolderAddIcon } from "@heroicons/react/outline";
+import { FolderAddIcon, PlusIcon } from "@heroicons/react/outline";
 import { FormEvent, Key, useEffect, useState } from "react";
 
 const ResumeItom = (props: { userID: any }) => {
@@ -44,18 +45,18 @@ const ResumeItom = (props: { userID: any }) => {
           render: "Creating successful :)",
           type: "success",
           isLoading: false,
-          autoClose: 2500,
+          autoClose: 2000,
         });
       } else {
         throw Error;
       }
     } catch (error: any) {
-      console.log(error.msg);
+      console.log(error);
       toast.update(id, {
-        render: "Failed Creating",
+        render: "Failed Creating :(",
         type: "error",
         isLoading: false,
-        autoClose: 2500,
+        autoClose: 2000,
       });
     }
     setShowModal(false);
@@ -185,37 +186,50 @@ const ResumeItom = (props: { userID: any }) => {
   } else {
     return (
       <>
-        <div className="bg-gray-800 h-screen">
+        <div className="bg-gray-800 min-h-screen">
           <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
             <h2 className="sr-only">Products</h2>
             <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
               {/* eslint-disable-next-line */}
+              <div className="group relative">
+                <div
+                  className="w-full min-h-80 bg-gray-700 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none"
+                  onClick={() => {
+                    setShowModal(true);
+                  }}
+                >
+                  <div className="w-full h-full text-cyan-600 hover:text-cyan-400 grid gap-4 place-content-center lg:w-full lg:h-full">
+                    <PlusIcon width={50} height={50} />
+                  </div>
+                </div>
+              </div>
               {products.map(
                 (product: {
                   _id: Key | null | undefined;
-                  imageSrc: string | undefined;
-                  imageAlt: string | undefined;
+                  image: string | undefined;
                   href: string | undefined;
-                  name: string | undefined;
+                  title: string | undefined;
                 }) => (
                   <div key={product?._id} className="group relative">
-                    <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                    <div className="w-full min-h-80 bg-gray-700 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
                       <img
-                        src="https://source.unsplash.com/nature/800x700/"
-                        alt={product?.imageAlt}
+                        src={product?.image}
+                        alt={`${product?._id}`}
                         className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                       />
                     </div>
                     <div className="mt-4 flex justify-between">
                       <div>
                         <h3 className="text-md text-cyan-500">
-                          <a href={product?.href} className="font-bold">
-                            <span
-                              aria-hidden="true"
-                              className="absolute inset-0"
-                            />
-                            {product?.name}
-                          </a>
+                          <Link href={`${"/resumes/" + product._id}`}>
+                            <a className="font-bold">
+                              <span
+                                aria-hidden="true"
+                                className="absolute inset-0"
+                              />
+                              {product?.title}
+                            </a>
+                          </Link>
                         </h3>
                       </div>
                     </div>

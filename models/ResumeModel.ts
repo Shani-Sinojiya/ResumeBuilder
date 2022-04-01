@@ -1,3 +1,4 @@
+import axios from "axios";
 import mongoose from "mongoose";
 
 const ResumeSchema = new mongoose.Schema(
@@ -14,6 +15,9 @@ const ResumeSchema = new mongoose.Schema(
     theme: {
       type: Number,
       default: 1,
+    },
+    image: {
+      type: String,
     },
   },
   {
