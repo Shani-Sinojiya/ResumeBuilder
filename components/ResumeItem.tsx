@@ -154,7 +154,7 @@ const ResumeItom = (props: { userID: any }) => {
                       type="text"
                       name="Name"
                       id="Name"
-                      className="border text-sm rounded-lg block w-full p-2.5 bg-slate-600 border-slate-500 outline-none placeholder-slate-400 text-cyan-200"
+                      className="border text-sm rounded-lg block w-full p-2.5 bg-slate-600 border-slate-500 outline-none placeholder-slate-400 text-cyan-200 caret-cyan-500"
                       placeholder="Full stack web developer"
                       required
                       onChange={(e) => {
@@ -191,7 +191,7 @@ const ResumeItom = (props: { userID: any }) => {
             <h2 className="sr-only">Products</h2>
             <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
               {/* eslint-disable-next-line */}
-              <div className="group relative">
+              <div className="group relative cursor-pointer">
                 <div
                   className="w-full min-h-80 bg-gray-700 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none"
                   onClick={() => {
@@ -292,7 +292,7 @@ const ResumeItom = (props: { userID: any }) => {
                       type="text"
                       name="Name"
                       id="Name"
-                      className="border text-sm rounded-lg block w-full p-2.5 bg-slate-600 border-slate-500 outline-none placeholder-slate-400 text-cyan-200"
+                      className="border text-sm rounded-lg block w-full p-2.5 bg-slate-600 border-slate-500 outline-none placeholder-slate-400 text-cyan-200 caret-cyan-500"
                       placeholder="Full stack web developer"
                       required
                       onChange={(e) => {

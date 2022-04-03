@@ -2,10 +2,10 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import ProfileManu from "./ProfileManu";
 import classNames from "../lib/className";
+import { useSession } from "next-auth/react";
 import { Disclosure } from "@headlessui/react";
 import LoginIconForNav from "./LoginIconForNav";
 import { MenuAlt1Icon, XIcon } from "@heroicons/react/outline";
-import { useSession } from "next-auth/react";
 
 export default function NavBar() {
   const { data: session, status } = useSession();
@@ -13,9 +13,9 @@ export default function NavBar() {
   const navigation = [
     { name: "Home", href: "/", current: router.asPath == "/" ? true : false },
     {
-      name: "Resumes",
-      href: "/resumes",
-      current: router.asPath == "/resumes" ? true : false,
+      name: "Resume",
+      href: "/resume",
+      current: router.asPath == "/resume" ? true : false,
     },
   ];
   return (
@@ -39,7 +39,7 @@ export default function NavBar() {
                 <div className="flex-shrink-0 flex text-center">
                   <Link href="/" passHref>
                     <h1 className="text-cyan-400 cursor-pointer text-2xl font-serif font-bold">
-                      Me<span className="text-cyan-200">Re</span>Sume
+                      MeSume
                     </h1>
                   </Link>
                 </div>

@@ -19,7 +19,7 @@ function CTASection(props: { login: boolean }) {
                 className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl text-base font-medium rounded-md px-5 py-3 text-center mr-2 mb-2"
                 onClick={(e) => {
                   e.preventDefault();
-                  router.push("/resumes");
+                  router.push("/resume");
                 }}
               >
                 Get started

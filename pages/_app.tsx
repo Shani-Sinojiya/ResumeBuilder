@@ -1,9 +1,9 @@
+import Head from "next/head";
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { SessionProvider } from "next-auth/react";
-import Head from "next/head";
 
 function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
@@ -87,9 +87,8 @@ function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
       <Component {...pageProps} />
       <ToastContainer
         position="bottom-right"
-        newestOnTop
-        role="alert"
         theme="colored"
+        newestOnTop
       />
     </SessionProvider>
   );

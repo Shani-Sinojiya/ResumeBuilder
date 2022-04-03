@@ -8,7 +8,7 @@ const Footer = () => {
           <Link href="/">
             <a className="flex items-center">
               <span className="self-center text-3xl font-semibold font-serif whitespace-nowrap text-cyan-400">
-                Me<span className="text-cyan-200">Re</span>Sume
+                MeSume
               </span>
             </a>
           </Link>
@@ -28,8 +28,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/resumes">
-                  <a className="text-cyan-300 hover:underline">Resumes</a>
+                <Link href="/resume">
+                  <a className="text-cyan-300 hover:underline">Resume</a>
                 </Link>
               </li>
             </ul>

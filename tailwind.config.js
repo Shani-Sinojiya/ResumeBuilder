@@ -4,7 +4,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      transitionDuration: {
+        '600': '600ms',
+      }
+    },
   },
   plugins: [require("@tailwindcss/aspect-ratio")],
   darkMode: "class",
