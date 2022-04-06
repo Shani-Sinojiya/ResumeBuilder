@@ -27,7 +27,7 @@ const hendler = async (req: NextApiRequest, res: NextApiResponse) => {
 
 export default hendler;
 
-export const GetData = async (req: NextApiRequest, res: NextApiResponse) => {
+const GetData = async (req: NextApiRequest, res: NextApiResponse) => {
   const { id } = req.query;
   try {
     const data = await Resumes.findById(id);
@@ -37,7 +37,7 @@ export const GetData = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 };
 
-export const DeleteData = async (req: NextApiRequest, res: NextApiResponse) => {
+const DeleteData = async (req: NextApiRequest, res: NextApiResponse) => {
   const { id } = req.query;
   try {
     const data = await Resumes.findByIdAndDelete(id);
@@ -47,7 +47,7 @@ export const DeleteData = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 };
 
-export const PutData = async (req: NextApiRequest, res: NextApiResponse) => {
+const PutData = async (req: NextApiRequest, res: NextApiResponse) => {
   const { id } = req.query;
   try {
     const data = await Resumes.findByIdAndUpdate(id, req.body);
@@ -57,7 +57,7 @@ export const PutData = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 };
 
-export const PatchData = async (req: NextApiRequest, res: NextApiResponse) => {
+const PatchData = async (req: NextApiRequest, res: NextApiResponse) => {
   const { id } = req.query;
   try {
     const data = await Resumes.findByIdAndUpdate(id, req.body);

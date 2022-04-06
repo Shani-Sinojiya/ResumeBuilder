@@ -1,8 +1,8 @@
 import axios from "axios";
 import Link from "next/link";
 import { toast } from "react-toastify";
-import { FolderAddIcon, PlusIcon } from "@heroicons/react/outline";
 import { FormEvent, Key, useEffect, useState } from "react";
+import { FolderAddIcon, PlusIcon } from "@heroicons/react/outline";
 
 const ResumeItom = (props: { userID: any }) => {
   const [ResumeEmpty, setResumeEmpty] = useState(true);
@@ -221,7 +221,7 @@ const ResumeItom = (props: { userID: any }) => {
                     <div className="mt-4 flex justify-between">
                       <div>
                         <h3 className="text-md text-cyan-500">
-                          <Link href={`${"/resumes/" + product._id}`}>
+                          <Link href={`${"/resume/" + product._id}`}>
                             <a className="font-bold">
                               <span
                                 aria-hidden="true"
