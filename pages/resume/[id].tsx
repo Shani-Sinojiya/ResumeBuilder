@@ -17,15 +17,16 @@ import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/react";
 import classNames from "../../lib/className";
 import { Menu, Transition } from "@headlessui/react";
+import style from "../styles/resume1.module.css";
 
 const Resume = (props: { data: any }) => {
   return (
-    <div className="container p-3">
+    <>
       <Head>
         <title>{props.data.title} - Resume | Mesume</title>
       </Head>
       <Example title={props.data.title} id={props.data._id} />
-    </div>
+    </>
   );
 };
 
@@ -35,7 +36,6 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const res = await axios.get(
     `${"htts://" + req.headers.host + "/api/resume/" + params?.id}`
   );
-  console.log(res.data);
 
   if (res.status == 200) {
     return {
@@ -188,15 +188,15 @@ function Example(props: { title: string; id: string }) {
               </Menu.Item>
               <Menu.Item>
                 {({ active }) => (
-                  <a
-                    href="#"
+                  <button
+                    onClick={HendleDelete}
                     className={classNames(
                       active ? "bg-gray-100" : "",
                       "block px-4 py-2 text-sm text-gray-700"
                     )}
                   >
-                    View
-                  </a>
+                    Delete
+                  </button>
                 )}
               </Menu.Item>
             </Menu.Items>

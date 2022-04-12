@@ -22,7 +22,7 @@ const hendler = async (req: NextApiRequest, res: NextApiResponse) => {
 
 async function PostReqForResum(req: NextApiRequest, res: NextApiResponse) {
   const { headers } = req;
-  const imageNumber = Math.floor(Math.random() * 13);
+  const imageNumber = Math.floor(Math.random() * 26);
   const imageUrl = "/img/" + imageNumber + "_resume_image.jpg";
 
   if (headers.accept != null) {

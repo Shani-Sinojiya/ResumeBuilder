@@ -31,7 +31,10 @@ export default function NavBar() {
                   {open ? (
                     <XIcon className="block h-6 w-6" aria-hidden="true" />
                   ) : (
-                    <MenuAlt1Icon className="block h-6 w-6" aria-hidden="true" />
+                    <MenuAlt1Icon
+                      className="block h-6 w-6"
+                      aria-hidden="true"
+                    />
                   )}
                 </Disclosure.Button>
               </div>
@@ -64,7 +67,9 @@ export default function NavBar() {
                 </div>
               </div>
               <div className="inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                {status == "loading" || session == undefined || session == null ? (
+                {status == "loading" ||
+                session == undefined ||
+                session == null ? (
                   <LoginIconForNav />
                 ) : (
                   <ProfileManu />
