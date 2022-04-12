@@ -7,9 +7,7 @@ const Footer = () => {
         <div className="mb-6 md:mb-0">
           <Link href="/">
             <a className="flex items-center">
-              <span className="self-center text-3xl font-semibold font-serif whitespace-nowrap text-cyan-400">
-                MeSume
-              </span>
+              <img src="/logo-Text.svg" className="mr-3 h-14" alt="MeSume" />
             </a>
           </Link>
           <h2 className="text-cyan-300 text-lg sm:text-md">

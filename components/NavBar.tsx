@@ -42,7 +42,16 @@ export default function NavBar() {
                 <div className="flex-shrink-0 flex text-center">
                   <Link href="/" passHref>
                     <h1 className="text-cyan-400 cursor-pointer text-2xl font-serif font-bold">
-                      MeSume
+                      <img
+                        className="block lg:hidden h-9 w-auto"
+                        src="/Logo.svg"
+                        alt="Mesume"
+                      />
+                      <img
+                        className="hidden lg:block h-10 w-auto"
+                        src="/Logo-Text.svg"
+                        alt="Mesume"
+                      />
                     </h1>
                   </Link>
                 </div>
