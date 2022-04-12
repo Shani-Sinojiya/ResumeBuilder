@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="mb-6 md:mb-0">
           <Link href="/">
             <a className="flex items-center">
-              <img src="/logo-Text.svg" className="mr-3 h-14" alt="MeSume" />
+              <img src="/Logo-Text.svg" className="mr-3 h-14" alt="MeSume" />
             </a>
           </Link>
           <h2 className="text-cyan-300 text-lg sm:text-md">
