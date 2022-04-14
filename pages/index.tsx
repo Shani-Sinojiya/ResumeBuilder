@@ -1,7 +1,7 @@
 import Head from "next/head";
+import Main from "../components/Main";
 import { GetServerSideProps } from "next";
 import Footer from "../components/Footer";
-import NavBar from "../components/NavBar";
 import Feature from "../components/Feature";
 import { getSession } from "next-auth/react";
 import CTASection from "../components/CTASection";
@@ -16,8 +16,8 @@ function Home(props: { login: boolean }) {
           content="MeSume is Awosome Resume Builder Web"
         />
       </Head>
-      <NavBar />
-      <CTASection login={props.login} />
+      <Main loggedin={props.login} />
+      <CTASection />
       <Feature />
       <Footer />
     </>

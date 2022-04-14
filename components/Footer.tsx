@@ -20,14 +20,14 @@ const Footer = () => {
               <strong>Page</strong>
             </h3>
             <ul>
-              <li className="mb-4">
+              {/* <li className="mb-4">
                 <Link href="/">
                   <a className="text-cyan-300 hover:underline">Home</a>
                 </Link>
-              </li>
+              </li> */}
               <li>
-                <Link href="/resume">
-                  <a className="text-cyan-300 hover:underline">Resume</a>
+                <Link href="/app/deshboard">
+                  <a className="text-cyan-300 hover:underline">Deshboard</a>
                 </Link>
               </li>
             </ul>
@@ -58,7 +58,7 @@ const Footer = () => {
       <hr className="my-6 border-cyan-400 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <div className="sm:flex sm:items-center sm:justify-between">
         <span className="text-sm text-cyan-300 text-center dark:text-cyan-300">
-          © 2022{" "}
+          &copy; 2022{" "}
           <Link href="/">
             <a className="hover:underline">MeSume</a>
           </Link>

@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Harlow Solid Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Harlow Solid Italic"), url("/fonts/HARLOWSI.woff") format("woff");
+}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,5 +20,13 @@
   }
   html::-webkit-scrollbar-thumb {
     @apply bg-gradient-to-b from-cyan-400 to-cyan-600 border border-none rounded-lg;
+  }
+}
+@layer utilities {
+  .font-hsi {
+    font-family: "Harlow Solid Italic";
+  }
+  .font-mont {
+    font-family: "Montserrat", sans-serif;
   }
 }

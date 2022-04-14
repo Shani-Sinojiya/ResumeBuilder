@@ -3,8 +3,8 @@ import { RefreshIcon } from "@heroicons/react/outline";
 
 const Feature = () => {
   return (
-    <section className="text-gray-400 bg-gray-800">
-      <div className="container px-5 py-5 mx-auto flex flex-wrap">
+    <section className="text-cyan-400 bg-gray-800">
+      <div className="max-w-8xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 flex flex-wrap">
         <div className="flex flex-wrap -m-4">
           <div className="p-4 lg:w-1/2 md:w-full">
             <div className="flex border-none rounded-lg p-8 sm:flex-row flex-col">
@@ -32,7 +32,7 @@ const Feature = () => {
                 <h2 className="text-cyan-400 text-lg title-font font-medium mb-3">
                   Create a resume that's worthy of who you are.
                 </h2>
-                <p className="leading-relaxed text-base text-cyan-200">
+                <p className="leading-relaxed text-base text-cyan-500">
                   Keep up with the latest trends in resume design without having
                   to start from scratch. With new templates being designed every
                   week and having made it that easy to design your own templates
@@ -51,7 +51,7 @@ const Feature = () => {
                 <h2 className="text-cyan-400 text-lg title-font font-medium mb-3">
                   Updating your resume shouldn't be a chore.
                 </h2>
-                <p className="leading-relaxed text-base text-cyan-200">
+                <p className="leading-relaxed text-base text-cyan-500">
                   The biggest problem people face is when they have to update
                   their resume when they learned a new skill or found a new job.
                   The ever-shifting layouts and inconsistency with design over a
@@ -81,7 +81,7 @@ const Feature = () => {
                 <h2 className="text-cyan-400 text-lg title-font font-medium mb-3">
                   Kickstarting your career shouldn't come at a cost.
                 </h2>
-                <p className="leading-relaxed text-base text-cyan-200">
+                <p className="leading-relaxed text-base text-cyan-500">
                   There are brilliant alternatives to this app like Novoresume
                   and Zety , but they come at a cost, mainly because of the time
                   the developers and the marketing they had to incur to make the
@@ -112,7 +112,7 @@ const Feature = () => {
                 <h2 className="text-cyan-400 text-lg title-font font-medium mb-3">
                   Your data is your data, none of our data
                 </h2>
-                <p className="leading-relaxed text-base text-cyan-200">
+                <p className="leading-relaxed text-base text-cyan-500">
                   You must be thinking, if you're not paying for the product,
                   then you are the product. Or, at least your data is?{" "}
                   <strong> Well, this is the exception.</strong> Your data is
