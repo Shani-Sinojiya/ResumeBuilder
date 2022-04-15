@@ -17,26 +17,41 @@ const Footer = () => {
         <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
           <div>
             <h3 className="mb-6 text-sm font-semibold text-cyan-400 uppercase">
-              <strong>Page</strong>
+              <strong>Links of Interst</strong>
             </h3>
             <ul>
-              {/* <li className="mb-4">
-                <Link href="/">
-                  <a className="text-cyan-300 hover:underline">Home</a>
+              <li className="mb-4">
+                <Link href="/blog/design-beautiful-resumes">
+                  <a className="text-cyan-300 hover:underline">
+                    Design Beautiful Resumes
+                  </a>
                 </Link>
-              </li> */}
+              </li>
+              <li className="mb-4">
+                <Link href="/blog/ats-friendly-resumes">
+                  <a className="text-cyan-300 hover:underline">
+                    ATS-Friendly Resumes
+                  </a>
+                </Link>
+              </li>
               <li>
-                <Link href="/app/deshboard">
-                  <a className="text-cyan-300 hover:underline">Deshboard</a>
+                <Link href="/blog/acing-video-interviews">
+                  <a className="text-cyan-300 hover:underline">
+                    Acing Video Interviews
+                  </a>
                 </Link>
               </li>
             </ul>
           </div>
           <div>
-            <h3 className="mb-6 text-sm font-semibold text-cyan-400 uppercase">
-              <strong>Legal</strong>
-            </h3>
             <ul>
+              <li className="mb-4 mt-11">
+                <Link href="/blog/jobs-during-covid-19">
+                  <a className="text-cyan-300 hover:underline">
+                    Jobs During COVID-19
+                  </a>
+                </Link>
+              </li>
               <li className="mb-4">
                 <Link href="/faq">
                   <a className="text-cyan-300 hover:underline">

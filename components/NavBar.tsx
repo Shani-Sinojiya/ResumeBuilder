@@ -10,14 +10,7 @@ import { MenuAlt1Icon, XIcon } from "@heroicons/react/outline";
 export default function NavBar() {
   const { data: session, status } = useSession();
   const router = useRouter();
-  const navigation = [
-    { name: "Home", href: "/", current: router.asPath == "/" ? true : false },
-    {
-      name: "Resume",
-      href: "/resume",
-      current: router.asPath == "/resume" ? true : false,
-    },
-  ];
+  // const navigation = [{}];
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -55,25 +48,6 @@ export default function NavBar() {
                     </h1>
                   </Link>
                 </div>
-                <div className="hidden sm:block sm:ml-6">
-                  <div className="flex space-x-4">
-                    {navigation.map((item) => (
-                      <Link href={item.href} key={item.name}>
-                        <a
-                          className={classNames(
-                            item.current
-                              ? "bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:ring-cyan-300 dark:focus:ring-cyan-800"
-                              : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                            "px-3 py-2 rounded-md text-sm font-medium"
-                          )}
-                          aria-current={item.current ? "page" : undefined}
-                        >
-                          {item.name}
-                        </a>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
               </div>
               <div className="inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 {status == "loading" ||
@@ -86,26 +60,6 @@ export default function NavBar() {
               </div>
             </div>
           </div>
-
-          <Disclosure.Panel className="sm:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navigation.map((item) => (
-                <Link href={item.href} key={item.name}>
-                  <a
-                    className={classNames(
-                      item.current
-                        ? "bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:ring-cyan-300 dark:focus:ring-cyan-800"
-                        : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                      "block px-3 py-2 rounded-md text-base font-medium"
-                    )}
-                    aria-current={item.current ? "page" : undefined}
-                  >
-                    {item.name}
-                  </a>
-                </Link>
-              ))}
-            </div>
-          </Disclosure.Panel>
         </>
       )}
     </Disclosure>

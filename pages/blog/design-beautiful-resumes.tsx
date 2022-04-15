@@ -1,14 +1,18 @@
-import Main from "../components/Main";
-import { useRouter } from "next/router";
+import Head from "next/head";
+import Main from "../../components/Main";
 
-const demo = () => {
-  const router = useRouter();
+const designBeautifulResumes = () => {
   return (
     <>
       <Main />
+      <Head>
+        <title>
+          Design beautiful resumes | MeSume - Awosome Resume Builder
+        </title>
+      </Head>
       <section className="bg-gray-800">
-        <div className="container max-w-7xl mx-auto pt-5 px-4 sm:px-6 lg:px-8 text-left md:text-left">
-          <h1 className="text-cyan-500 text-4xl text-center font-bold">
+        <div className="container max-w-7xl mx-auto pt-5 pb-10 px-4 sm:px-6 lg:px-8 text-left md:text-left">
+          <h1 className="text-cyan-500 lg:text-4xl text-2xl text-center font-bold">
             Designing Beautiful Resumes
           </h1>
           <div className="text-cyan-500">
@@ -23,7 +27,7 @@ const demo = () => {
               position, your design resume needs to be first rate for you to
               stand a chance of getting an interview.
             </p>
-            <p className="mt-2">
+            <p className="my-2">
               For your design resume to really shine, you need to think
               carefully about how it's designed as well as what's written. Here,
               we'll cover both, as we walk you through the process of creating a
@@ -41,7 +45,7 @@ const demo = () => {
               resume as much as the content, so use InDesign CC or even
               Illustrator CC to design something special.
             </p>
-            <p className="mt-2">
+            <p className="my-2">
               Whatever program you use to design your resume in, PDF is the best
               format to supply it in. This enables you to create good-looking
               documents that are completely cross-platform.
@@ -59,14 +63,14 @@ const demo = () => {
               something suitable either – take a look at our list of the best
               free fonts for designers.
             </p>
-            <p className="mt-2">
+            <p className="my-2">
               And if you would like to use more than one font, you can also
               check our perfect font pairings.
             </p>
           </div>
           <div className="text-cyan-500">
             <h2 className="font-bold text-lg mt-2">3. Consider using colour</h2>
-            <p className="mt-2">
+            <p className="my-2">
               For most non-design-related jobs, a resume designed or printed in
               colour is probably a waste of time. However, for design positions,
               touches of colour are an acceptable way to add a discreet personal
@@ -83,7 +87,7 @@ const demo = () => {
               A4, and if it's any longer than two pages, you’re waffling and
               including too much stuff.
             </p>
-            <p className="mt-2">
+            <p className="my-2">
               Don’t be tempted to mask a lack of experience with verbosity.
               Clean, well-laid-out resumes will always win over flabby ones -
               remember, the aim is to intrigue and impress. Point the recipient
@@ -101,7 +105,7 @@ const demo = () => {
               of the email you sent, you don't need to include them. Make life
               easier for your potential employer.
             </p>
-            <p className="mt-2">
+            <p className="my-2">
               This should be followed by a breakdown of your work experience,
               then your education. In both cases, this should be most recent
               first. Work experience should include dates, job title and a brief
@@ -120,7 +124,7 @@ const demo = () => {
               extremely impressed were it not for the fact that we had actually
               designed the site.
             </p>
-            <p className="mt-2">
+            <p className="my-2">
               Needless to say, that resume went straight in the bin and the
               sender was rewarded with a strongly worded email. Honesty is
               always the best policy, as you stand a good chance of being found
@@ -131,7 +135,7 @@ const demo = () => {
             <h2 className="font-bold text-lg mt-2">
               7. Include samples of work
             </h2>
-            <p className="mt-2">
+            <p className="my-2">
               By not including any samples of your work with your resume, you’re
               pretty much guaranteeing that the recipient will not consider you
               for the post. If you work with motion, stills are perfect, unless
@@ -144,7 +148,7 @@ const demo = () => {
           </div>
           <div className="text-cyan-500">
             <h2 className="font-bold text-lg mt-2">8. Keep it simple</h2>
-            <p className="mt-2">
+            <p className="my-2">
               Unless you’re really confident and sure about what you’re doing,
               keep the typographic flourishes and fanciful designs at bay,
               ensure the layout is simple and clear and the information is
@@ -155,7 +159,7 @@ const demo = () => {
           </div>
           <div className="text-cyan-500">
             <h2 className="font-bold text-lg mt-2">9. Show your personality</h2>
-            <p className="mt-2">
+            <p className="my-2">
               Simple does not have to mean dull. A resume is a reflection of
               your disposition and persona, and the recipient will be scanning
               it, consciously or not, for elements that distinguish your resume
@@ -174,7 +178,7 @@ const demo = () => {
               posters, inflatable resumes and resumes crafted using delicate and
               complex paper engineering.
             </p>
-            <p className="mt-2">
+            <p className="my-2">
               Off-the-wall resumes stick in the mind (you can see some of the
               best examples in our roundup of creative resumes) but they're a
               risky proposition. On the one hand you might appear like a
@@ -188,7 +192,7 @@ const demo = () => {
               We've all seen this clever resume concept... so don't try to pass
               it off as your idea
             </p>
-            <p className="mt-2">
+            <p className="my-2">
               A surprising number of graduates see an inspiring resume design
               concept and copy it. What can they be thinking? We all have access
               to the same internet, and if a particularly inventive resume
@@ -202,7 +206,7 @@ const demo = () => {
             <h2 className="font-bold text-lg mt-2">
               12. Use proper prints, not photocopies
             </h2>
-            <p className="mt-2">
+            <p className="my-2">
               Photocopies are cheap, but sadly they also look cheap, especially
               second and third generation copies. Type starts to break up,
               images are contrasty and full of noise, fingerprints and other
@@ -216,7 +220,7 @@ const demo = () => {
             <h2 className="font-bold text-lg mt-2">
               13. Demonstrate consistency
             </h2>
-            <p className="mt-2">
+            <p className="my-2">
               Real-world design projects are usually centred around a single,
               consistent theme or concept that runs throughout the logo,
               branding, literature and so on. Your résumé, portfolio and
@@ -237,7 +241,7 @@ const demo = () => {
               it's best to keep it short and to the point (three paragraphs is a
               good rule of thumb).
             </p>
-            <p className="mt-2">
+            <p className="my-2">
               Make it obvious you haven't just copied and pasted the same letter
               you've used to apply for a hundred other jobs. Write it in a way
               that's personal to the particular job and company you're applying
@@ -248,7 +252,7 @@ const demo = () => {
             <h2 className="font-bold text-lg mt-2">
               15. Create multiple resumes
             </h2>
-            <p className="mt-2">
+            <p className="my-2">
               If you're applying for multiple jobs, you should create multiple
               resumes, each targeting a specific role and the kind of experience
               and skills the prospective employers are looking for. To take an
@@ -260,33 +264,20 @@ const demo = () => {
           </div>
           <div className="text-cyan-500">
             <h2 className="font-bold text-lg mt-2">16. Check your spelling!</h2>
-            <p className="mt-2">
+            <p className="my-2">
               If you're getting this one wrong, you're in trouble If you're
               applying for a job as a designer, does it matter how well you
               write? The simple answer is yes. Spelling and grammar mistakes
               will make you appear uneducated, ignorant and/or lazy – and none
               of these represent the image you're trying to convey. So, always
               double-check your grammar and spelling, and get others to check it
-              too (it's easy to miss your own mistakes)
+              too {"(it's easy to miss your own mistakes)"}
             </p>
           </div>
-        </div>
-        <div className="w-full px-6 py-6 lg:mx-7.75rem md:mx-auto sm:px-8 md:px-8 sm:py-8 sm:shadow lg:w-5/6 xl:w-2/3">
-          <button
-            className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:ring-cyan-200 dark:focus:ring-cyan-800"
-            onClick={(e) => {
-              e.preventDefault();
-              router.back();
-            }}
-          >
-            <span className="relative px-5 py-2.5 transition-all ease-in duration-75 text-cyan-400 hover:text-white bg-gray-800 rounded-md group-hover:bg-opacity-0">
-              Go Back
-            </span>
-          </button>
         </div>
       </section>
     </>
   );
 };
 
-export default demo;
+export default designBeautifulResumes;

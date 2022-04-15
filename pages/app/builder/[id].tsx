@@ -15,15 +15,14 @@ import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/react";
-import classNames from "../../lib/className";
+import classNames from "../../../lib/className";
 import { Menu, Transition } from "@headlessui/react";
-import style from "../styles/resume1.module.css";
 
 const Resume = (props: { data: any }) => {
   return (
     <>
       <Head>
-        <title>{props.data.title} - Resume | Mesume</title>
+        <title>{props.data.title} - Mesume</title>
       </Head>
       <Example title={props.data.title} id={props.data._id} />
     </>
@@ -34,7 +33,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const session = await getSession(ctx);
   const { params, req } = ctx;
   const res = await axios.get(
-    `${"htts://" + req.headers.host + "/api/resume/" + params?.id}`
+    `${"http://" + req.headers.host + "/api/resume/" + params?.id}`
   );
 
   if (res.status == 200) {
@@ -68,7 +67,7 @@ function Example(props: { title: string; id: string }) {
         isLoading: false,
         autoClose: 2000,
       });
-      router.push("/resume");
+      router.push("/app/dashboard");
     } else {
       toast.update(id, {
         render: "Deleting unsuccessful :(",

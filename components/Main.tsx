@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 
-const demo = (props: { loggedin: boolean }) => {
+const demo = () => {
   const router = useRouter();
+  const { data: session, status } = useSession();
   return (
     <div className="bg-gray-800">
       <div className="container max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 text-center md:text-left">
@@ -40,7 +41,7 @@ const demo = (props: { loggedin: boolean }) => {
               A free and robust resume builder.
             </h2>
             <div className="mt-12">
-              {props.loggedin ? (
+              {session ? (
                 <button
                   className="mx-auto md:mx-0 transition bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:ring-cyan-300 dark:focus:ring-cyan-800 px-3 py-2 rounded-md text-sm font-medium font-mont"
                   onClick={() => {
