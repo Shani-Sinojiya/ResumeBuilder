@@ -31,7 +31,6 @@ export const GoogleButton = () => (
   <button
     type="button"
     onClick={(e) => {
-      e.preventDefault();
       signIn("google");
     }}
     className="w-full block mt-4 bg-white hover:bg-slate-100 focus:bg-slate-100 text-slate-900 font-semibold rounded-lg px-4 py-3 border border-slate-300"
@@ -73,7 +72,6 @@ export const GithubButton = () => (
   <button
     type="button"
     onClick={(e) => {
-      e.preventDefault();
       signIn("github");
     }}
     className="w-full block mt-4 bg-slate-900 hover:bg-slate-800 focus:bg-slate-800 text-white font-semibold rounded-lg px-4 py-3 border border-slate-400"
