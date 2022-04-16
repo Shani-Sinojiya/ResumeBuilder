@@ -5,7 +5,6 @@ import { FormEvent, Key, useEffect, useState } from "react";
 import { FolderAddIcon, PlusIcon } from "@heroicons/react/outline";
 
 const ResumeItom = (props: { userID: any }) => {
-  const [ResumeEmpty, setResumeEmpty] = useState(true);
   const [products, setProducts] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [NewTitle, setNewTitle] = useState("");
@@ -20,11 +19,6 @@ const ResumeItom = (props: { userID: any }) => {
     if (res.status === 200) {
       const { data } = res.data;
       setProducts(res.data.data);
-      if (data.length == 0) {
-        // setResumeEmpty(true);
-      } else {
-        // setResumeEmpty(false);
-      }
     }
   }
   const HendleNewResume = async (e: FormEvent) => {
@@ -86,39 +80,41 @@ const ResumeItom = (props: { userID: any }) => {
                 </div>
               </div>
             </div>
-            {products.map(
-              (product: {
-                _id: Key | null | undefined;
-                image: string | undefined;
-                href: string | undefined;
-                title: string | undefined;
-              }) => (
-                <div key={product?._id} className="group relative">
-                  <div className="w-full min-h-80 bg-gray-700 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                    <img
-                      src={product?.image}
-                      alt={`${product?._id}`}
-                      className="w-full h-full object-center object-cover lg:w-full lg:h-full"
-                    />
-                  </div>
-                  <div className="mt-4 flex justify-between">
-                    <div>
-                      <h3 className="text-md text-cyan-500">
-                        <Link href={`${"/app/builder/" + product._id}`}>
-                          <a className="font-bold">
-                            <span
-                              aria-hidden="true"
-                              className="absolute inset-0"
-                            />
-                            {product?.title}
-                          </a>
-                        </Link>
-                      </h3>
+            {products.length == 0
+              ? null
+              : products.map(
+                  (product: {
+                    _id: Key | null | undefined;
+                    image: string | undefined;
+                    href: string | undefined;
+                    title: string | undefined;
+                  }) => (
+                    <div key={product?._id} className="group relative">
+                      <div className="w-full min-h-80 bg-gray-700 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                        <img
+                          src={product?.image}
+                          alt={`${product?._id}`}
+                          className="w-full h-full object-center object-cover lg:w-full lg:h-full"
+                        />
+                      </div>
+                      <div className="mt-4 flex justify-between">
+                        <div>
+                          <h3 className="text-md text-cyan-500">
+                            <Link href={`${"/app/builder/" + product._id}`}>
+                              <a className="font-bold">
+                                <span
+                                  aria-hidden="true"
+                                  className="absolute inset-0"
+                                />
+                                {product?.title}
+                              </a>
+                            </Link>
+                          </h3>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              )
-            )}
+                  )
+                )}
           </div>
         </div>
       </div>
