@@ -1,4 +1,4 @@
-import DBConn from "../../../middlewares/DBConn";
+import DBConn from "../../../db/DBConn";
 import Resumes from "../../../models/ResumeModel";
 import type { NextApiRequest, NextApiResponse } from "next";
 

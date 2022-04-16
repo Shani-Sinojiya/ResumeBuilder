@@ -52,13 +52,6 @@ const Footer = () => {
                   </a>
                 </Link>
               </li>
-              <li className="mb-4">
-                <Link href="/faq">
-                  <a className="text-cyan-300 hover:underline">
-                    Privacy Policy
-                  </a>
-                </Link>
-              </li>
               <li>
                 <Link href="/faq">
                   <a className="text-cyan-300 hover:underline">
