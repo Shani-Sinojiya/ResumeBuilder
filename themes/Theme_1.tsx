@@ -119,13 +119,34 @@ function Theme_1() {
                 <br />
               </div>
             </div>
+            <div>
+              {/* Hobbies */}
+              <div className="text-[7px] leading-18px uppercase tracking-[2px] text-[#73808D] font-bold">
+                Hobbies
+              </div>
+              <div>
+                <div className="leading-18px font-bold text-theme-1-black text-[11px]">
+                  Writing Blog
+                </div>
+              </div>
+              <div>
+                <div className="leading-18px font-bold text-theme-1-black text-[11px]">
+                  Learning New technologies
+                </div>
+              </div>
+              <div>
+                <div className="leading-18px font-bold text-theme-1-black text-[11px]">
+                  Playing PC and Mobile games
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div className="w-1/3">
           <div>
             <img
               src="/img/avatar.svg"
-              className="m-9 rounded-full w-[72px] h-[72px] shadow-theme-1"
+              className="mt-9 rounded-full w-[72px] h-[72px] shadow-theme-1"
               alt="avatar"
             />
           </div>
@@ -151,7 +172,6 @@ function Theme_1() {
             <div>
               {/* social network */}
               <div className="text-[11px] leading-18px text-[#73808D] font-normal">
-                {/* mail */}
                 <a
                   href="https://www.facebook.com/shani.sinojiya"
                   className="inline-flex justify-center"
@@ -162,7 +182,6 @@ function Theme_1() {
                 </a>
               </div>
               <div className="text-[11px] leading-18px text-[#73808D] font-normal">
-                {/* mail */}
                 <a
                   href="https://www.twitter.com/ShaniSinojiya"
                   className="inline-flex justify-center"
@@ -172,6 +191,43 @@ function Theme_1() {
                   <i className="bi bi-twitter pr-2"></i> Shani Sinojiya
                 </a>
               </div>
+              <br />
+            </div>
+            <div>
+              {/* Skill */}
+              <div className="text-[11px] leading-18px text-[#73808D] font-bold">
+                Skill
+              </div>
+              <div className="grid grid-cols-2">
+                <div className="text-[11px] leading-18px text-[#73808D] font-normal">
+                  HTML
+                </div>
+                <div className="text-[11px] leading-18px text-[#73808D] font-normal">
+                  CSS
+                </div>
+                <div className="text-[11px] leading-18px text-[#73808D] font-normal">
+                  JS
+                </div>
+              </div>
+              <br />
+            </div>
+            <div>
+              {/* Languages */}
+              <div className="text-[11px] leading-18px text-[#73808D] font-bold">
+                Languages
+              </div>
+              <div>
+                <div className="text-[11px] leading-18px text-[#73808D] font-normal capitalize">
+                  english {"("}native{")"}
+                </div>
+                <div className="text-[11px] leading-18px text-[#73808D] font-normal capitalize">
+                  Gujrati {"("}professionnal{")"}
+                </div>
+                <div className="text-[11px] leading-18px text-[#73808D] font-normal capitalize">
+                  hindi {"("}native{")"}
+                </div>
+              </div>
+              <br />
             </div>
           </div>
         </div>
