@@ -1,9 +1,7 @@
-import Theme_1 from "../themes/Theme_1";
+import Theme_2 from "../themes/Theme_2";
 
 const demo = () => {
-  return (
-    <Theme_1 />
-  );
+  return <Theme_2 />;
 };
 
 export default demo;

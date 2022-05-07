@@ -1,4 +1,5 @@
 import "bootstrap-icons/font/bootstrap-icons.css";
+
 function Theme_1() {
   return (
     <div className="w-595px h-auto font-arial">
@@ -228,6 +229,16 @@ function Theme_1() {
                 </div>
               </div>
               <br />
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.print();
+                }}
+                className="text-white print:hidden bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+              >
+                Default
+              </button>
             </div>
           </div>
         </div>
