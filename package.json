@@ -1,5 +1,5 @@
 {
-  "name": "resumebuilder",
+  "name": "mesume",
   "private": true,
   "scripts": {
     "dev": "next dev",
